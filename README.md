@@ -1,50 +1,96 @@
-# Welcome to your Expo app 👋
+# Welcome to ExpoGO SonOfGillas Template 👋
+the aim of this repository is to create an handfull template for new React Native Projects.
+In Particular the project use expo go and it's Countinuous Native Generation
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Software Needed
+AndoridStudio Or Xcode \
+Node.js v20.18.1 \
+react-native v0.78.1 \
+expo-sdk  v52.0.39
+
 
 ## Get started
 
 1. Install dependencies
-
    ```bash
-   npm install
+   yarn install
    ```
 
-2. Start the app
+2. Enable your physical device debug-usb (https://reactnative.dev/docs/running-on-device) \
+   OR \
+   Open an Emulator (with AndoridStudio or Xcode)
 
-   ```bash
-    npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+Here there are two possibilities:\
+CABLE CONNECTION (a cable must be always connecting the device and the pc)
 
+   3. Generate a Android and Ios Foulders
+      ```bash
+      npx expo prebuild
+      ```
+
+   4. Launch the command for build and Lunch the app
+      ```bash
+         #Build for android
+         yarn android
+         #Build for ios
+         yarn ios
+      ```
+
+WIRELESS CONNECTION 
+
+   3. Install eas cli
+      ```bash
+         yarn add eas-cli
+      ```
+
+   4. create a dev account in https://expo.dev/ 
+
+   5. login with eas-cli with your expo account
+      ```bash
+         eas login
+      ```
+
+   6. build your app
+      ```bash
+         #Build for android
+         yarn build:android:dev
+         #Build for ios
+         yarn build:ios:dev
+      ```
+
+   7. Intall the build 
+      ```bash
+         adb install /Path/to/your/Build/development.apk ??
+      ```
+
+   8. Connect your Device and your Pc to the same Wifi 
+      (Wifi repaters don't count as same wifi. due to different ip mapping between moden and repaters)
+
+
+   9. Start the local development server
+      ```bash
+      npx expo start
+      ```
+
+   10. The expo start log should have print your IP and a PORT, this is where the development server is hosted. 
+       If you can't find then the port should always be 8081, and your ip can be find with this command
+      ```bash
+         #Get MacOs Ip
+         ifconfig | grep "inet 192.168"
+      ```
+
+   11. open the app installed with the step 7 and insert as server url
+      ```bash
+         http://<your-ip>:8081
+      ```
+
+NOTE:
+The build configures are in the eas.json
+
+
+For other information
 - [development build](https://docs.expo.dev/develop/development-builds/introduction/)
 - [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.

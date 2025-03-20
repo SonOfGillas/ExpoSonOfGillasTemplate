@@ -5,8 +5,10 @@
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "npx expo run:android",
+    "ios": "npx expo run:ios",
+    "build:android:dev": "eas build --profile development:device --platform android --local --output output/development.apk",
+    "build:ios:dev": "eas build --profile development:device --platform ios --local --output output/development.ipa",
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint"
