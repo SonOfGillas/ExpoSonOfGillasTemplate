@@ -5,10 +5,14 @@
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
-    "android": "npx expo run:android",
-    "ios": "npx expo run:ios",
-    "build:android:dev": "eas build --profile development:device --platform android --local --output output/development.apk",
-    "build:ios:dev": "eas build --profile development:device --platform ios --local --output output/development.ipa",
+    "build:android:debug": "eas build --profile debug --platform android --local --output output/debug.apk",
+    "build:ios:debug": "eas build --profile debug --platform ios --local --output output/debug.ipa",
+    "build:android:dev": "eas build --profile development --platform android --local --output output/development.apk",
+    "build:ios:dev": "eas build --profile development --platform ios --local --output output/development.ipa",
+    "build:android:preview": "eas build --profile preview --platform android --local --output output/preview.apk",
+    "build:ios:preview": "eas build --profile preview --platform ios --local --output output/preview.ipa",
+    "build:android:prod": "eas build --profile production --platform android --local --output output/production.apk",
+    "build:ios:prod": "eas build --profile production --platform ios --local --output output/production.ipa",
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint"
@@ -40,7 +44,8 @@
     "react-native-safe-area-context": "4.12.0",
     "react-native-screens": "~4.4.0",
     "react-native-web": "~0.19.13",
-    "react-native-webview": "13.12.5"
+    "react-native-webview": "13.12.5",
+    "expo-updates": "~0.27.4"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

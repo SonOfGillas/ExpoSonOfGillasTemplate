@@ -1,18 +1,36 @@
 {
   "cli": {
-    "version": ">= 13.4.2",
+    "version": ">= 14.4.1",
     "appVersionSource": "remote"
   },
   "build": {
+    "debug": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "withoutCredentials": true
+      },
+      "ios": {
+        "simulator": true
+      },
+      "environment": "development",
+      "channel": "development"
+    },
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "environment": "development",
+      "channel": "development"
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "environment": "preview",
+      "channel": "preview"
     },
     "production": {
-      "autoIncrement": true
+      "autoIncrement": true,
+      "environment": "production",
+      "channel": "production"
     }
   },
   "submit": {
