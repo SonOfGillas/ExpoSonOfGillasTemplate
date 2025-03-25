@@ -67,7 +67,7 @@ eas-cli v16.0.1
       #Build for ios
       yarn build:ios:dev
    ```
-   if you want to create a build without android keystore or apple account login (simulators build)
+   if you want to create a SIMULATOR ONLY build without android keystore or apple account login
    ```bash
       #Build for android no keystore needed
       yarn build:android:debug
@@ -100,7 +100,7 @@ you don't need to pull the correct .env.local file before every build
 just run the build script and they will automatically use the profile to determinate the corret env variables to use\
 to update the app version you need to edit the app.config.ts
 \
-   Develop-Debug (simulators)
+   SIMULATOR ONLY Develop-Debug
    ```bash
       #Build for android thant does't need a keystore 
       yarn build:android:debug
