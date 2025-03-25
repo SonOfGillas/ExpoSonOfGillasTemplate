@@ -27,8 +27,16 @@ eas-cli v16.0.1
 6. in your https://expo.dev/ open your projet and in the configuration tab open
    the "Environment variables" section
    ![Alt text](./assets/images/readme_images/create_env_file.png)
-7. Here you can create your variables, each variable have a Name a Environment 
-   and a Value. Remember to create the variable for each enviroment if they are different.
+7. Here you can create your variables, each variable have a Name a Environment and a Value. 
+   The name of each variable must have EXPO_PUBLIC as prefix, for exemple:
+   ```
+      EXPO_PUBLIC_API_URL
+   ```
+   you will be able to access the variable in this way
+   ```typescript
+      process.env.EXPO_PUBLIC_API_URL
+   ```
+   Remember to create the variable for each enviroment if they are different.
 8. Install eas and log in with you expo account
       ```bash
          yarn add eas-cli
@@ -36,11 +44,10 @@ eas-cli v16.0.1
       ```bash
           eas login
       ```
-9. pull the .env.local file with the command:
+9. every time you update the env variable you must pull the .env.local file with the command:
    ```bash
       eas env:pull
    ```
-   check build for other information
 
 
 ## Get started
@@ -96,8 +103,6 @@ If you can't find then the port should always be 8081, and your ip can be find w
    ```
 
 ## Build 
-you don't need to pull the correct .env.local file before every build
-just run the build script and they will automatically use the profile to determinate the corret env variables to use\
 to update the app version you need to edit the app.config.ts
 \
    SIMULATOR ONLY Develop-Debug
