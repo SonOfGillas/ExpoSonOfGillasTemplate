@@ -41,6 +41,7 @@ export default function RootLayout() {
         <Stack.Screen {...getScreenProps(AppRoutes.HOME)} />
         <Stack.Screen {...getScreenProps(AppRoutes.USERS)} />
         <Stack.Screen {...getScreenProps(AppRoutes.USERS_BY_ID)} />
+        <Stack.Screen {...getScreenProps(AppRoutes.TABS_EXEMPLE)} />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>

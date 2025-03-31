@@ -24,6 +24,13 @@ const HomeTest = () => {
       >
         <Text> Go to user no param</Text>
       </Pressable>
+      <Pressable
+        onPress={() => {
+          router.push(AppRoutes.TABS_EXEMPLE);
+        }}
+      >
+        <Text> Tabs Exemple</Text>
+      </Pressable>
     </View>
   );
 }

@@ -31,6 +31,13 @@ export const getScreenProps = (routeName: AppRoutes): ScreenProps => {
           headerTitle: 'Not Found',
         },
       };
+    case AppRoutes.TABS_EXEMPLE:
+      return {
+        name: AppRoutes.TABS_EXEMPLE,
+        options: {
+          headerTitle: 'Tabs Example',
+        },
+      };
     default:
       // This exhaustive check ensures all enum values of AppRoutes are handled
       const exhaustiveCheck: never = routeName;
