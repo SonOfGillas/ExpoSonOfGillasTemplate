@@ -51,7 +51,7 @@ eas-cli v16.0.1
 
 
 ## Get started
-1. setup the env following the "Env Management and Setup" section
+1. setup the env following the [Env Management and Setup](#env-management-and-setup) section
 
 2. Install dependencies
    ```bash
@@ -173,8 +173,7 @@ Each feature is divided into 3 further subfolders:
     Foulder for the stylesheets for this feature. All the common stylesheets should be in the shared foulder
 - Components:
     All the grafic widget specific for this feature. All the common Components should be in the shared foulder
-- Pages:
-    create a foulder for each page, and separete the stylesheet in a dedicated file
+- Pages: if there is more than one page create a foulder for each page, and separete the stylesheet in a dedicated file, otherwise it there is only a page you can insert it directly inside the presentation foulder
 
 ## Shared structure  📁
 ```
@@ -206,7 +205,46 @@ Each feature is divided into 3 further subfolders:
 - TODO
 
 ## Navigation
-the navigation is implemented using 
+the navigation is implemented using [expo router](https://docs.expo.dev/versions/latest/sdk/router/). With this library all the pages must be in the /app foulder and the routes_name MUST be the same as the relative path to the /app foulder
+#### Add a new route
+1. create a foulder with the name of your feature inside /app/features
+2. follow the [Feature structure](#feature-structure--) and [Presentation layer](#presentation-layer) structure and create the new route page .tsx
+3. add the route name in the routes_names.ts file.
+NOTE: the name of the Route MUST MATCH is relative path to the /app foulder
+4. create the route condiguration in routes_props.ts
+5. add a new <Stack.Screen/> inside the /app/_layout.tsx file
+NOTE: you can have more that one layout.tsx file if you create feature with internal navigation logic like in the TABS_EXEMPLE
+#### navigation usage
+navigating between routes:
+```typescript
+router.push(AppRoutes.HOME);
+```
+passing parameters to routes:
+```typescript
+#destination page
+export type UserPageProps = {
+  id: string;
+}
+const UserPage = () => {
+  const params = useLocalSearchParams<UserPageProps>();
+  const { id } = params;
+  return (
+    <View>
+      <Text>User page - {id}</Text>
+    </View>
+  )
+}
+```
+```typescript
+#starting page
+const userProps : UserPageProps = {
+   id: '123',
+};
+router.push({
+   pathname: AppRoutes.USERS,
+   params: userProps,
+});
+```
 
 ## Dependency injection
 

@@ -17,13 +17,6 @@ export const getScreenProps = (routeName: AppRoutes): ScreenProps => {
           headerTitle: 'Users',
         },
       };
-    case AppRoutes.USERS_BY_ID:
-      return {
-        name: formatRouteName(AppRoutes.USERS_BY_ID),
-        options: {
-          headerTitle: 'User page',
-        }
-      };
     case AppRoutes.NOT_FOUND:
       return {
         name: formatRouteName(AppRoutes.NOT_FOUND),
