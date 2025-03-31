@@ -102,6 +102,119 @@ If you can't find then the port should always be 8081, and your ip can be find w
       http://<your-ip>:8081
    ```
 
+
+## Project structure 📁
+The project is structured following a feature-first approach
+
+```
+├── app
+│   ├── shared
+│   ├─── features
+│   │    ├──── login
+│   │    ├──── onboarding
+```
+
+The folder `/app` contains the following subfolders:
+- features: contains a subfolder for each of the features that logically compose the application
+- shared: contains all the classes, constants and functions shared between multiple features
+
+## Feature structure  📁
+
+```
+├── login
+│   ├─── data_model
+│   ├─── logic
+│   ├─── presentation
+```
+
+Each feature is divided into 3 further subfolders:
+- data_model: 
+    It containts all the interfaces and the functions to define the entities and to manipulate the data need from the feauture
+- logic: 
+    It containes a Redux slice to manage all the business logic of the feature, and the reducers to interact with the UI
+- presentation: 
+    it contains all the pages, and components for the feature Ui rendering
+
+### Data layer
+```
+├── data_model ❌
+│   ├─── entities
+│   ├─── data_sources
+│   │    ├─── data_sources_interface.ts
+│   │    ├─── data_sources_iml_1.ts
+│   │    ├─── data_sources_iml_2.ts
+│   ├─── repositories
+│   │    ├─── repository_interface.ts
+│   │    ├─── repository_iml.ts
+```
+- Entities: The entities are the domain model used only by the current features. The shared ones will be located inside the shared folder
+- Data sources:
+    Components that provide functionalities to retrieve, edit and store data. Sources can provide access to remote, local or in-memory data. This is the layer where actual integration with the APIs is implemented. It's important to separate interface and implementation. 
+- Repositories:
+    Components that expose a common interface and implementation to abstuct the data_sources and let the higher layers to access data in a impler way. They also mediate between different sources and implement caching strategies.
+
+❌ NOTE: if the app it is small, it is better to have only the data_model in the shared foulder
+
+### Logic layer
+
+- TODO
+
+### Presentation layer
+```
+├── presentation
+│   ├─── styles
+│   ├─── components
+│   ├─── page_1
+│   │   ├─── style.tsx
+│   │   ├─── page_1.tsx
+│   ├─── page_2
+```
+- Styles:
+    Foulder for the stylesheets for this feature. All the common stylesheets should be in the shared foulder
+- Components:
+    All the grafic widget specific for this feature. All the common Components should be in the shared foulder
+- Pages:
+    create a foulder for each page, and separete the stylesheet in a dedicated file
+
+## Shared structure  📁
+```
+├── shared
+│   ├─── components
+│   ├─── core
+│   ├─── data_model
+│   ├─── l10n
+│   ├─── styles
+```
+
+- Components:
+    Common components between different features
+- Core:
+    Contains all classes used for core aspects of the entire project: routes,  config/env manager, error instance, dependency injection, asset managment...
+- Data_model:
+    is the same as the Data layer in the feature foulder, but this contains all the common data models between different features.
+- L10n:
+    It contains all the logic for the translations
+- Styles:
+    Foulder for the stylesheets in common between differnt features
+
+## Translations
+
+- TODO
+
+## Asset Managment
+
+- TODO
+
+## Navigation
+the navigation is implemented using 
+
+## Dependency injection
+
+- TODO
+
+## Test
+- TODO
+
 ## Build 
 to update the app version you need to edit the app.config.ts
 \

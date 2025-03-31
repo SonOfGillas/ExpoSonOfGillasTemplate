@@ -7,9 +7,9 @@ import Animated, {
   useScrollViewOffset,
 } from 'react-native-reanimated';
 
-import { ThemedView } from '@/components/ThemedView';
-import { useBottomTabOverflow } from '@/components/ui/TabBarBackground';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { ThemedView } from '@/app/shared/components/ThemedView';
+import { useBottomTabOverflow } from '@/app/shared/components/ui/TabBarBackground';
+import { useColorScheme } from '@/app/shared/core/hooks/useColorScheme';
 
 const HEADER_HEIGHT = 250;
 

@@ -1,9 +1,9 @@
 import { Image, StyleSheet, Platform, Alert } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { HelloWave } from '@/app/shared/components/HelloWave';
+import ParallaxScrollView from '@/app/shared/components/ParallaxScrollView';
+import { ThemedText } from '@/app/shared/components/ThemedText';
+import { ThemedView } from '@/app/shared/components/ThemedView';
 import { useEffect } from "react";
 import * as Updates from "expo-updates";
 
@@ -12,16 +12,7 @@ export default function HomeScreen() {
 
   useEffect(() => {
     console.log("env:", process.env.EXPO_PUBLIC_API_URL);
-    // console.log("⚙️ Building app for environment:", process.env.NODE_ENV);
-    // console.log("🔧 API_URL:", process.env.API_URL);
-    // Updates.checkForUpdateAsync();
   }, []);
-
-  // useEffect(() => {
-  //   if (isUpdatePending) {
-  //     Updates.reloadAsync();
-  //   }
-  // }, [isUpdatePending]);
 
   return (
     <ParallaxScrollView
