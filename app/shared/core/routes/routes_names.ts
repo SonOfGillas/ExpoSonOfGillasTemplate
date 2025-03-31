@@ -1,6 +1,6 @@
 import { router, ScreenProps } from 'expo-router';
 
-export const FEATURES_PATH = '/features';
+export const FEATURES_PATH = 'features';
 export const PRESENTATION_FOULDER = 'presentation';
 
 /*
@@ -14,7 +14,7 @@ export enum AppRoutes {
   HOME = `${FEATURES_PATH}/home/${PRESENTATION_FOULDER}/home`,
   USERS = `${FEATURES_PATH}/users/${PRESENTATION_FOULDER}/user_page`,
   USERS_BY_ID = `${FEATURES_PATH}/users/${PRESENTATION_FOULDER}/[id]`,
-  NOT_FOUND = '/+not-found',
+  NOT_FOUND = '+not-found',
 
   INITIAL_ROUTE = AppRoutes.HOME,
 }

@@ -37,29 +37,10 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={theme}>
       <Stack>
-        {/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} /> */}
         <Stack.Screen {...getScreenProps(AppRoutes.NOT_FOUND)} />
         <Stack.Screen {...getScreenProps(AppRoutes.HOME)} />
         <Stack.Screen {...getScreenProps(AppRoutes.USERS)} />
         <Stack.Screen {...getScreenProps(AppRoutes.USERS_BY_ID)} />
-
-        {/* <Stack.Screen name="users/presentation/[id]" options={
-          {
-            headerTitle: 'User page',
-            headerStyle: {
-              backgroundColor: theme.colors.card,
-            }
-          }
-        }/>
-        <Stack.Screen name="users/presentation/user_page" options={
-          {
-            headerTitle: 'User page no param',
-            headerStyle: {
-              backgroundColor: theme.colors.card,
-            }
-          }
-        }/>
-                */} 
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
