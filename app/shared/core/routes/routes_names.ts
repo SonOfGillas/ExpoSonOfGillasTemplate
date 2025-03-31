@@ -1,4 +1,4 @@
-export const FEATURES_PATH = 'features';
+export const FEATURES_PATH = '/features';
 export const PRESENTATION_FOULDER = 'presentation';
 
 /*
@@ -16,4 +16,14 @@ export enum AppRoutes {
   NOT_FOUND = '+not-found',
 
   INITIAL_ROUTE = AppRoutes.HOME,
+}
+
+export const formatRouteName = (routeName: AppRoutes): string => {
+  /* 
+  * Remove the leading slash from the route name
+  * This is necessary because the route name should not start with a slash
+  * when using it in the stack navigator (otherwise it doesn't read the options)
+  * but it need the / at the beginning of the path when its invoked with router.push
+  */
+  return routeName.replace(/^\//, '');
 }

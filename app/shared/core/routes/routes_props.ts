@@ -1,39 +1,39 @@
 import { ScreenProps } from "expo-router";
-import { AppRoutes } from "./routes_names";
+import { AppRoutes, formatRouteName } from "./routes_names";
 
 export const getScreenProps = (routeName: AppRoutes): ScreenProps => {
   switch (routeName) {
     case AppRoutes.HOME:
       return {
-        name: AppRoutes.HOME,
+        name: formatRouteName(AppRoutes.HOME),
         options: {
           headerTitle: 'Home',
         },
       };
     case AppRoutes.USERS:
       return {
-        name: AppRoutes.USERS,
+        name: formatRouteName(AppRoutes.USERS),
         options: {
           headerTitle: 'Users',
         },
       };
     case AppRoutes.USERS_BY_ID:
       return {
-        name: AppRoutes.USERS_BY_ID,
+        name: formatRouteName(AppRoutes.USERS_BY_ID),
         options: {
           headerTitle: 'User page',
         }
       };
     case AppRoutes.NOT_FOUND:
       return {
-        name: AppRoutes.NOT_FOUND,
+        name: formatRouteName(AppRoutes.NOT_FOUND),
         options: {
           headerTitle: 'Not Found',
         },
       };
     case AppRoutes.TABS_EXEMPLE:
       return {
-        name: AppRoutes.TABS_EXEMPLE,
+        name: formatRouteName(AppRoutes.TABS_EXEMPLE),
         options: {
           headerTitle: 'Tabs Example',
         },
@@ -42,6 +42,6 @@ export const getScreenProps = (routeName: AppRoutes): ScreenProps => {
       // This exhaustive check ensures all enum values of AppRoutes are handled
       const exhaustiveCheck: never = routeName;
       console.warn(`Unhandled route: ${routeName}`)
-      return { name: AppRoutes.NOT_FOUND };
+      return { name: formatRouteName(AppRoutes.NOT_FOUND) };
   }
 }
