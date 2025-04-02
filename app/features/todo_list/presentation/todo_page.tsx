@@ -6,13 +6,13 @@ import { useLocalSearchParams } from "expo-router";
 
 
 export type TodoPageProps = {
-  initialCounter: string;
+  id: string;
 }
 
 
 const TodoPage = () => {
     const params = useLocalSearchParams<TodoPageProps>();
-    const { initialCounter } = params;
+    const { id } = params;
 
   const count = useSelector((state: RootState) => state.todo.value);
   const dispatch = useDispatch<AppDispatch>();
@@ -20,6 +20,7 @@ const TodoPage = () => {
   return (
     <View>
     <Text>Todo Page </Text>
+      <Text>Id: { id }</Text>
       <Text> Count: { count } </Text>
       <Pressable
         onPress={() => {

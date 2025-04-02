@@ -151,7 +151,7 @@ Each feature is divided into 3 further subfolders:
 - Data sources:
     Components that provide functionalities to retrieve, edit and store data. Sources can provide access to remote, local or in-memory data. This is the layer where actual integration with the APIs is implemented. It's important to separate interface and implementation. 
 - Repositories:
-    Components that expose a common interface and implementation to abstuct the data_sources and let the higher layers to access data in a impler way. They also mediate between different sources and implement caching strategies.
+    Components that expose a common interface and implementation to abstuct the data_sources and let the higher layers to access data in a impler way. They also mediate between different sources, implement caching strategies and validation.
 
 ❌ NOTE: if the app it is small, it is better to have only the data_model in the shared foulder
 

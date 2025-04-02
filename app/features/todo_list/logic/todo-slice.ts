@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit'
 import { initialCounterState } from './todo-state'
 import { Todo } from '../data_model/entities/todo'
+import { incrementAsync } from './todo-asyncthunk'
 
 const todoSlice = createSlice({
   name: 'todo',
@@ -36,19 +37,6 @@ const todoSlice = createSlice({
       )
   },
 })
-
-export const incrementAsync = createAsyncThunk(
-  'counter/fetchIncrement',
-  async (amount: number) => {
-    const response = await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(amount)
-      }, 1000)
-    })
-    return amount
-  }
-);
-
 
 export const { incremented, decremented } = todoSlice.actions
 export const todoReducer = todoSlice.reducer

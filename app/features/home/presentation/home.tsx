@@ -1,7 +1,7 @@
 import { AppRoutes } from "@/app/shared/core/routes/routes_names";
 import { Link, router } from "expo-router";
 import { Pressable, Text,View } from "react-native";
-import { UserPageProps } from "../../users/presentation/user_page";
+import { TodoPageProps } from "../../todo_list/presentation/todo_page";
 
 const HomeTest = () => {
   return (
@@ -10,12 +10,12 @@ const HomeTest = () => {
       <Text>This is a test page.</Text>
       <Pressable
         onPress={() => {
-          const userProps : UserPageProps = {
-            id: '123',
+          const todoProps : TodoPageProps = {
+           id : '123',
           };
           router.push({
             pathname: AppRoutes.TODO_LIST,
-            params: userProps,
+            params: todoProps,
           });
         }}
       >
