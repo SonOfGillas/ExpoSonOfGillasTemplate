@@ -10,7 +10,7 @@ export const PRESENTATION_FOULDER = 'presentation';
 export enum AppRoutes {
   // Basic route path
   HOME = `${FEATURES_PATH}/home/${PRESENTATION_FOULDER}/home`,
-  USERS = `${FEATURES_PATH}/users/${PRESENTATION_FOULDER}/user_page`,
+  TODO_LIST = `${FEATURES_PATH}/todo_list/${PRESENTATION_FOULDER}/todo_page`,
   TABS_EXEMPLE = `${FEATURES_PATH}/tabs_exemple/${PRESENTATION_FOULDER}/(tabs)`,
   NOT_FOUND = '+not-found',
 

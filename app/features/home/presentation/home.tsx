@@ -14,12 +14,12 @@ const HomeTest = () => {
             id: '123',
           };
           router.push({
-            pathname: AppRoutes.USERS,
+            pathname: AppRoutes.TODO_LIST,
             params: userProps,
           });
         }}
       >
-        <Text> Go to user with params</Text>
+        <Text> Go to Todo page</Text>
       </Pressable>
       <Pressable
         onPress={() => {

@@ -10,11 +10,11 @@ export const getScreenProps = (routeName: AppRoutes): ScreenProps => {
           headerTitle: 'Home',
         },
       };
-    case AppRoutes.USERS:
+    case AppRoutes.TODO_LIST:
       return {
-        name: formatRouteName(AppRoutes.USERS),
+        name: formatRouteName(AppRoutes.TODO_LIST),
         options: {
-          headerTitle: 'Users',
+          headerTitle: 'Todo List',
         },
       };
     case AppRoutes.NOT_FOUND:

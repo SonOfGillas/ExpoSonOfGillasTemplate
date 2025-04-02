@@ -2,7 +2,7 @@
 the aim of this repository is to create an handfull template for new React Native Projects.
 In Particular the project use expo go and it's Countinuous Native Generation
 
-# Software Needed
+## Software Needed
 AndoridStudio Or Xcode \
 Node.js v20.18.1 \
 react-native v0.78.1 \
@@ -156,8 +156,7 @@ Each feature is divided into 3 further subfolders:
 ❌ NOTE: if the app it is small, it is better to have only the data_model in the shared foulder
 
 ### Logic layer
-
-- TODO
+The logic and state managment layer in implemented with [Redux](https://redux.js.org/)
 
 ### Presentation layer
 ```
@@ -196,14 +195,6 @@ Each feature is divided into 3 further subfolders:
 - Styles:
     Foulder for the stylesheets in common between differnt features
 
-## Translations
-
-- TODO
-
-## Asset Managment
-
-- TODO
-
 ## Navigation
 the navigation is implemented using [expo router](https://docs.expo.dev/versions/latest/sdk/router/). With this library all the pages must be in the /app foulder and the routes_name MUST be the same as the relative path to the /app foulder
 #### Add a new route
@@ -214,20 +205,22 @@ NOTE: the name of the Route MUST MATCH is relative path to the /app foulder
 4. create the route condiguration in routes_props.ts
 5. add a new <Stack.Screen/> inside the /app/_layout.tsx file
 NOTE: you can have more that one layout.tsx file if you create feature with internal navigation logic like in the TABS_EXEMPLE
+other possibile layouts can be found here https://docs.expo.dev/router/basics/layout/
 #### navigation usage
 navigating between routes:
 ```typescript
 router.push(AppRoutes.HOME);
 ```
-passing parameters to routes:
+passing parameters to routes, Parameters con only be strings:
 ```typescript
 #destination page
 export type UserPageProps = {
   id: string;
+  list: string[];
 }
 const UserPage = () => {
   const params = useLocalSearchParams<UserPageProps>();
-  const { id } = params;
+  const { id,list } = params;
   return (
     <View>
       <Text>User page - {id}</Text>
@@ -239,15 +232,20 @@ const UserPage = () => {
 #starting page
 const userProps : UserPageProps = {
    id: '123',
+   list: []
 };
 router.push({
    pathname: AppRoutes.USERS,
    params: userProps,
 });
 ```
+## Translations
+- TODO
+
+## Asset Managment
+- TODO
 
 ## Dependency injection
-
 - TODO
 
 ## Test
